@@ -40,3 +40,6 @@ print('Hi, %s, you have $%d.' % ('Michael', 1000000))
 用%%来表示一个%
 """
 # int() 类型转换  raw_input()读取的内容永远以字符串的形式返回
+
+isinstance(x, str)
+isinstance(x, (int, float))
