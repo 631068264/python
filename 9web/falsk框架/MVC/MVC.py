@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # __author__ = 'wuyuxi'
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash
 
 app = Flask(__name__)
 
@@ -22,7 +22,9 @@ def signin():
 	password = request.form['password']
 	if username == 'admin' and password == 'password':
 		return render_template('signin-ok.html', username=username)
-	return render_template('form.html', message='Bad username or password', username=username)
+	else:
+		flash("粗无")
+		return render_template('form.html', username=username)
 
 
 if __name__ == '__main__':
