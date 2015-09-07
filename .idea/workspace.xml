@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de77e13f-062d-4181-84d7-f60a71ce9cfa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3模块/test.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3模块/thumb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IO/xx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IO/文件读写同步IO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/3模块/hello.py" afterPath="$PROJECT_DIR$/3模块/hello.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/3模块/println.py" afterPath="$PROJECT_DIR$/3模块/println.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="de77e13f-062d-4181-84d7-f60a71ce9cfa" name="Default" comment="" />
     <ignored path="python.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
