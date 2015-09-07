@@ -19,35 +19,35 @@ import sys
 
 
 def test():
-	args = sys.argv
-	if len(args) == 1:
-		print 'Hello, world!'
-	elif len(args) == 2:
-		print 'Hello, %s!' % args[1]
-	else:
-		print 'Too many arguments!'
+    args = sys.argv
+    if len(args) == 1:
+        print 'Hello, world!'
+    elif len(args) == 2:
+        print 'Hello, %s!' % args[1]
+    else:
+        print 'Too many arguments!'
 
 
 if __name__ == '__main__':
-	test()
+    test()
 
 _xxx, __xx = (7, 8)  # private变量
 
 
 # private 函数
 def _private_1(name):
-	return 'Hello, %s' % name
+    return 'Hello, %s' % name
 
 
 def _private_2(name):
-	return 'Hi, %s' % name
+    return 'Hi, %s' % name
 
 
 def greeting(name):
-	if len(name) > 3:
-		return _private_1(name)
-	else:
-		return _private_2(name)
+    if len(name) > 3:
+        return _private_1(name)
+    else:
+        return _private_2(name)
 
 # 这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是运行测试。
 
