@@ -10,7 +10,7 @@ print(f(-79.555))
 
 # 高阶函数
 def add(x, y, f):
-	return f(x) + f(y)
+    return f(x) + f(y)
 
 
 print(add(-5, 6, abs))
@@ -20,7 +20,7 @@ print(add(-5, 6, abs))
 # reduce(函数,序列) 合起算
 
 def not_empty(s):
-	return s and s.strip()
+    return s and s.strip()
 
 
 filter(not_empty, ['A', '', 'B', None, 'C', '  '])
@@ -28,22 +28,22 @@ filter(not_empty, ['A', '', 'B', None, 'C', '  '])
 
 # 倒序
 def reversed_cmp(x, y):
-	if x > y:
-		return -1
-	if x < y:
-		return 1
-	return 0
+    if x > y:
+        return -1
+    if x < y:
+        return 1
+    return 0
 
 
 # 忽略大小写
 def cmp_ignore_case(s1, s2):
-	u1 = s1.upper()
-	u2 = s2.upper()
-	if u1 < u2:
-		return -1
-	if u1 > u2:
-		return 1
-	return 0
+    u1 = s1.upper()
+    u2 = s2.upper()
+    if u1 < u2:
+        return -1
+    if u1 > u2:
+        return 1
+    return 0
 
 
 sorted([36, 5, 12, 9, 21], reversed_cmp)
@@ -51,36 +51,36 @@ sorted([36, 5, 12, 9, 21], reversed_cmp)
 
 # 返回函数
 def lazy_sum(*args):
-	def sum():
-		ax = 0
-		for n in args:
-			ax = ax + n
-		return ax
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
 
-	return sum
-
-
-def count():
-	fs = []
-	for i in range(1, 4):
-		def f():
-			return i * i
-
-		fs.append(f)
-	return fs
+    return sum
 
 
 def count():
-	fs = []
-	for i in range(1, 4):
-		def f(j):
-			def g():
-				return j * j
+    fs = []
+    for i in range(1, 4):
+        def f():
+            return i * i
 
-			return g
+        fs.append(f)
+    return fs
 
-		fs.append(f(i))
-	return fs
+
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f(j):
+            def g():
+                return j * j
+
+            return g
+
+        fs.append(f(i))
+    return fs
 
 
 f1, f2, f3 = count()
