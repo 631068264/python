@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # __author__ = 'wuyuxi'
-
+"""
+int
+long
+float
+bool
+complex
+"""
 # \\代表字符 \
 # 字符串换行 \n
 # 一个布尔值只有True、False两种值  布尔值可以用and、or和not运算。

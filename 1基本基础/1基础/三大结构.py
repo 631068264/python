@@ -30,7 +30,9 @@ sum = 0
 for x in range(101):
     sum = sum + x
 print sum
-
+"""
+循环 while
+"""
 sum = 0
 n = 99
 while n > 0:

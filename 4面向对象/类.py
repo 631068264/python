@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # __author__ = 'wuyuxi'
+
+"""
+Python 一切都是对象
+"""
+
+
 class Student(object):
     def __init__(self, name, score):
         self.__name = name
@@ -9,13 +15,19 @@ class Student(object):
     def print_score(self):
         print '%s: %s' % (self.__name, self.__score)
 
-    def __get_grade(self):  # private
+    # private
+    def __get_grade(self):
         if self.__score >= 90:
             return 'A'
         elif self.__score >= 60:
             return 'B'
         else:
             return 'C'
+
+    # 静态方法
+    @staticmethod
+    def hello(n):
+        print(n)
 
 
 bart = Student('Bart Simpson', 59)
@@ -27,4 +39,6 @@ lisa.print_score()
 bart.name = "ajsflasj"
 print(bart.name)
 
-print(bart.get_grade())
+# print(bart.get_grade())
+
+Student.hello("uwoerouwoe")
