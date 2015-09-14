@@ -17,8 +17,10 @@ is_ok = False
 if not is_ok:
     print(is_ok)
 
-message = {"create_time": datetime.datetime.now()}
+message = {"create_time": datetime.datetime.now().date().month}
 
+month = datetime.datetime.now().date().month
+type(month)
 
 def lala():
     message["age"] = 12
@@ -29,18 +31,21 @@ def lala():
 lala()
 
 
-class stu(object):
-    pass
+# class stu(object):
+#     pass
+#
+#
+# s = stu()
+# s.age = 12
+# s.team = 65
+# print(s)
+#
+# list1 = [1, 5, 6, 8]
+# l = [1, 5, 6, 8, 9, 4, 6, 4, 2, 7, 6, 6]
+#
+# # l = [l2 for l2 in l if l2 not in list1]  # 删除相同元素
+# l.append(list1)
+# print(l)
 
 
-s = stu()
-s.age = 12
-s.team = 65
-print(s)
-
-list1 = [1, 5, 6, 8]
-l = [1, 5, 6, 8, 9, 4, 6, 4, 2, 7, 6, 6]
-
-# l = [l2 for l2 in l if l2 not in list1]  # 删除相同元素
-l.append(list1)
-print(l)
+# safe_vars.trade_category = "" if company.trade_category is None else company.trade_category

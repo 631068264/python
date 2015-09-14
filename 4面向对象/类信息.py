@@ -55,16 +55,16 @@ dir('ABC')
 
 
 class Student(object):
-	def __init__(self, name):
-		self.name = name
+    def __init__(self, name):
+        self.name = name
 
-	# 两者的区别是__str__()返回用户看到的字符串，
-	# 而__repr__()返回程序开发者看到的字符串，
-	# 也就是说，__repr__()是为调试服务的。
-	def __str__(self):
-		return 'Student object (name=%s)' % self.name
+    # 两者的区别是__str__()返回用户看到的字符串，
+    # 而__repr__()返回程序开发者看到的字符串，
+    # 也就是说，__repr__()是为调试服务的。
+    def __str__(self):
+        return 'Student object (name=%s)' % self.name
 
-	__repr__ = __str__
+    __repr__ = __str__
 
 
 s = Student('484')
@@ -81,28 +81,28 @@ print(s)
 # 直到遇到StopIteration错误时退出循环。
 
 class Fib(object):
-	def __init__(self):
-		self.a, self.b = 0, 1  # 初始化两个计数器a，b
+    def __init__(self):
+        self.a, self.b = 0, 1  # 初始化两个计数器a，b
 
-	def __iter__(self):
-		return self  # 实例本身就是迭代对象，故返回自己
+    def __iter__(self):
+        return self  # 实例本身就是迭代对象，故返回自己
 
-	def next(self):
-		self.a, self.b = self.b, self.a + self.b  # 计算下一个值
-		if self.a > 100000:  # 退出循环的条件
-			raise StopIteration();
-		return self.a  # 返回下一个值
+    def next(self):
+        self.a, self.b = self.b, self.a + self.b  # 计算下一个值
+        if self.a > 100000:  # 退出循环的条件
+            raise StopIteration();
+        return self.a  # 返回下一个值
 
-	# __setitem__()方法，把对象视作list或dict来对集合赋值。最后，还有一个__delitem__()方法，用于删除某个元素
-	def __getitem__(self, n):  # 像list那样按照下标取出元素
-		a, b = 1, 1
-		for x in range(n):
-			a, b = b, a + b
-		return a
+    # __setitem__()方法，把对象视作list或dict来对集合赋值。最后，还有一个__delitem__()方法，用于删除某个元素
+    def __getitem__(self, n):  # 像list那样按照下标取出元素
+        a, b = 1, 1
+        for x in range(n):
+            a, b = b, a + b
+        return a
 
 
 for n in Fib():
-	print n
+    print n
 f = Fib()
 print(f[5])
 

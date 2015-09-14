@@ -18,6 +18,7 @@ if age < 18:
     print(age)
 else:
     print(age + 1)
+# safe_vars.trade_category = "" if company.trade_category is None else company.trade_category
 """
 循环
 """

@@ -2,20 +2,20 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'wuyuxi'
 class Student(object):
-	def __init__(self, name, score):
-		self.__name = name
-		self.__score = score
+    def __init__(self, name, score):
+        self.__name = name
+        self.__score = score
 
-	def print_score(self):
-		print '%s: %s' % (self.__name, self.__score)
+    def print_score(self):
+        print '%s: %s' % (self.__name, self.__score)
 
-	def __get_grade(self):  # private
-		if self.__score >= 90:
-			return 'A'
-		elif self.__score >= 60:
-			return 'B'
-		else:
-			return 'C'
+    def __get_grade(self):  # private
+        if self.__score >= 90:
+            return 'A'
+        elif self.__score >= 60:
+            return 'B'
+        else:
+            return 'C'
 
 
 bart = Student('Bart Simpson', 59)
