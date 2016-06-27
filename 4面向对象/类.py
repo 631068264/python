@@ -9,14 +9,14 @@ Python 一切都是对象
 
 class Student(object):
     def __init__(self, name, score):
-        self.__name = name
+        self.__name = name  # 私有变量
         self.__score = score
 
     def print_score(self):
-        print '%s: %s' % (self.__name, self.__score)
+        print '%s: %s' % (self.__name, self.__get_grade())
 
     # private
-    def __get_grade(self):
+    def __get_grade(self):  # 私有方法
         if self.__score >= 90:
             return 'A'
         elif self.__score >= 60:
@@ -24,14 +24,24 @@ class Student(object):
         else:
             return 'C'
 
-    # 静态方法
+    @classmethod
+    def class_func(cls):
+        """ 定义类方法，至少有一个cls参数 """
+
+        print '类方法'
+
     @staticmethod
-    def hello(n):
-        print(n)
+    def static_func():
+        """ 定义静态方法 ，无默认参数"""
+
+        print '静态方法'
 
 
 bart = Student('Bart Simpson', 59)
+bbrt = Student('Bart Simpson', 59)
 lisa = Student('Lisa Simpson', 87)
+
+print bart == bbrt
 bart.print_score()
 lisa.print_score()
 
@@ -39,6 +49,9 @@ lisa.print_score()
 bart.name = "ajsflasj"
 print(bart.name)
 
-# print(bart.get_grade())
+fuck = Student()
+fuck.class_func()
+fuck.static_func()
 
-Student.hello("uwoerouwoe")
+Fuck.class_func()
+Fuck.static_func()

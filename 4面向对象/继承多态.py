@@ -11,20 +11,43 @@ class Dog(Animal):
     def run(self):
         print 'Dog is running...'
 
-    def eat(self):
-        print 'Eating meat...'
-
 
 class Cat(Animal):
-    pass
+    def run(self):
+        print 'Cat is running...'
 
 
-class Bat(Dog, Cat):
-    pass
+class Bat(Cat, Dog):
+    """
+    父类继承object 子类继承的方法按广度优先
+    """
+
+    def sdf(self):
+        super(Dog, self).run()
+        Dog.run(self)
 
 
-dog = Dog()
-dog.run()
+class Fuck(Cat, Dog):
+    @classmethod
+    def class_func(cls):
+        """ 定义类方法，至少有一个cls参数 """
 
-cat = Cat()
-cat.run()
+        print '类方法'
+
+    @staticmethod
+    def static_func():
+        """ 定义静态方法 ，无默认参数"""
+
+        print '静态方法'
+
+
+bat = Bat()
+bat.run()
+bat.sdf()
+
+fuck = Fuck()
+fuck.class_func()
+fuck.static_func()
+
+Fuck.class_func()
+Fuck.static_func()
