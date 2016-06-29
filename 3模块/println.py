@@ -14,7 +14,7 @@ except ImportError:  # 导入失败会捕获到ImportError
 
 _xxx, __xx = (7, 8)  # private变量
 
-from PIL import Image
+from pic import Image
 
 im = Image.open('test.png')
 print im.format, im.size, im.mode
