@@ -53,5 +53,5 @@ fuck = Student()
 fuck.class_func()
 fuck.static_func()
 
-Fuck.class_func()
-Fuck.static_func()
+Student.class_func()
+Student.static_func()

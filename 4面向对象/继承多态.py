@@ -3,16 +3,25 @@
 # __author__ = 'wuyuxi'
 
 class Animal(object):
+    def __init__(self, *args, **kwargs):
+        print '__init__Animal'
+
     def run(self):
         print 'Animal is running...'
 
 
 class Dog(Animal):
+    def __init__(self, *args, **kwargs):
+        print '__init__Dog'
+
     def run(self):
         print 'Dog is running...'
 
 
 class Cat(Animal):
+    def __init__(self, *args, **kwargs):
+        print '__init__Cat'
+
     def run(self):
         print 'Cat is running...'
 
@@ -23,7 +32,7 @@ class Bat(Cat, Dog):
     """
 
     def sdf(self):
-        super(Dog, self).run()
+        super(Bat, self).run()
         Dog.run(self)
 
 
