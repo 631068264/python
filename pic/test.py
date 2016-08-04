@@ -39,7 +39,15 @@ def tran(image):
     return image
 
 
+def qu(image, quan):
+    image.save("qu.jpg", quality=quan)
+
+
+def wepbs(image):
+    image.resize((345, 345))
+    image.save("web.webp", "WEBP")
+
+
 file_name = "36fe80963c0b3b9.jpg"
 im = Image.open(file_name)
-im = tran(im)
-im.save("trans.jpg")
+wepbs(im)
