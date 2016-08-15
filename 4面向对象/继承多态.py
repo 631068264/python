@@ -19,7 +19,8 @@ class Dog(Animal):
 
 
 class Cat(Animal):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, s, *args, **kwargs):
+        print s
         print '__init__Cat'
 
     def run(self):
@@ -31,9 +32,16 @@ class Bat(Cat, Dog):
     父类继承object 子类继承的方法按广度优先
     """
 
+    def __init__(self, s):
+        super(Bat, self).__init__(s)
+
     def sdf(self):
         super(Bat, self).run()
+        self.run()
         Dog.run(self)
+
+    def f(self):
+        Dog.__init__(self)
 
 
 class Fuck(Cat, Dog):
@@ -50,13 +58,14 @@ class Fuck(Cat, Dog):
         print '静态方法'
 
 
-bat = Bat()
-bat.run()
-bat.sdf()
+bat = Bat("fs")
+bat.f()
+# bat.run()
+# bat.sdf()
 
-fuck = Fuck()
-fuck.class_func()
-fuck.static_func()
-
-Fuck.class_func()
-Fuck.static_func()
+# fuck = Fuck()
+# fuck.class_func()
+# fuck.static_func()
+#
+# Fuck.class_func()
+# Fuck.static_func()
