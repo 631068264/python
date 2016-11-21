@@ -1,0 +1,9 @@
+click==6.6
+ecdsa==0.13
+Fabric==1.12.0
+gevent==1.1.2
+greenlet==0.4.10
+paramiko==1.17.2
+Pillow==3.3.0
+pycrypto==2.6.1
+pytest==3.0.4

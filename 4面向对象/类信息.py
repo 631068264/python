@@ -15,7 +15,7 @@ isinstance('a', (str, unicode))
 """
 
 # 可以使用dir()函数，它返回一个包含字符串的list，比如，获得一个str对象的所有属性和方法：
-dir('ABC')
+print dir('ABC')
 
 """
 类长度

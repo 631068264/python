@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # __author__ = 'wuyuxi'
-import socket
+from 套接字 import test
 
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s = 套接字.socket(test.AF_INET, test.SOCK_DGRAM)
 # 绑定端口:
 s.bind(('127.0.0.1', 9999))
 

@@ -6,7 +6,7 @@
 AF_INET指定使用IPv4协议，如果要用更先进的IPv6，就指定为AF_INET6
 SOCK_STREAM指定使用面向流的TCP协议
 """
-import socket
+from 套接字 import test
 
 """
 # Client
@@ -39,7 +39,7 @@ with open('sina.html', 'wb') as f:
     f.write(html)
 """
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = 套接字.socket(test.AF_INET, test.SOCK_STREAM)
 # 建立连接:
 s.connect(('127.0.0.1', 9999))
 # 接收欢迎消息:

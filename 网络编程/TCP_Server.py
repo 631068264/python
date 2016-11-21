@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # __author__ = 'wuyuxi'
-import socket
 import threading
 import time
+
+from 套接字 import test
 
 
 def tcplink(sock, addr):
@@ -19,7 +20,7 @@ def tcplink(sock, addr):
     print 'Connection from %s:%s closed.' % addr
 
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = 套接字.socket(test.AF_INET, test.SOCK_STREAM)
 # 监听端口:
 s.bind(('127.0.0.1', 9999))
 # 指定等待连接的最大数量

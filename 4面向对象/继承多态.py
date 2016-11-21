@@ -3,7 +3,7 @@
 # __author__ = 'wuyuxi'
 
 class Animal(object):
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         print '__init__Animal'
 
     def run(self):
@@ -11,7 +11,7 @@ class Animal(object):
 
 
 class Dog(Animal):
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         print '__init__Dog'
 
     def run(self):
@@ -24,7 +24,7 @@ class Cat(Animal):
         print '__init__Cat'
 
     def run(self):
-        print 'Cat is running...'
+        print 'Cat is running...s'
 
 
 class Bat(Cat, Dog):
@@ -38,10 +38,11 @@ class Bat(Cat, Dog):
     def sdf(self):
         super(Bat, self).run()
         self.run()
-        Dog.run(self)
+        # Dog.run(self)
 
     def f(self):
-        Dog.__init__(self)
+        # Dog.__init__(self)
+        pass
 
 
 class Fuck(Cat, Dog):
@@ -58,8 +59,8 @@ class Fuck(Cat, Dog):
         print '静态方法'
 
 
-bat = Bat("fs")
-bat.f()
+bat = Bat("df")
+bat.sdf()
 # bat.run()
 # bat.sdf()
 

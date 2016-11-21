@@ -4,7 +4,7 @@
 
 # 使用assert 代替
 n = 10
-assert n != 9, 'jfajldf '  # 断言错 输出
+assert n == 0, 'jfajldf '  # 断言错 输出
 
 import logging
 
