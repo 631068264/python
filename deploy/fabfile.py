@@ -23,5 +23,6 @@ from fabric.api import local
 
 # fab prepare_deploy
 def prepare_deploy():
+    local("git status")
     local("git add -A && git commit")
-    local("git push")
+    local("git checkout develop")
