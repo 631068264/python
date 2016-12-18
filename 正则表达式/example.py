@@ -21,30 +21,76 @@
 $表示行的结束，\d$表示必须以数字结束。
 
 .*?
-"""
 
+re.S 忽略换行符
+re.I 忽略大小写
+"""
 import re
 
-test = '12789'
-if re.match(r'\d{5}', test):
-    print 'ok'
+# test = '12789'
+# if re.match(r'\d{5}', test):
+#     print 'ok'
+# else:
+#     print 'failed'
+#
+# # 切分字符
+# list = 'a b   c'.split(' ')
+# print(list)
+#
+# list = re.split(r'\s+', 'a b   c')
+# re.split(r'[\s\,\;]+', 'a,b;; c  d')
+# print(list)
+#
+# m = re.match(r'^(\d{3})-(\d{3,8})$', '010-12345')
+# # 注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串。
+# print(m.groups())
+#
+# # 贪婪匹配
+# lsit = re.match(r'^(\d+?)(0*)$', '102300').groups()
+# # ('1023', '00')
+# re.match(r'^(\d+)(0*)$', '102300').groups()
+# # ('102300', '')
+
+
+
+
+text1 = '11/27/2012'
+text2 = 'Nov 27, 2012'
+
+datepat = re.compile(r'\d+/\d+/\d+')
+datepat.match(text1)
+l = re.search(r'\d+/\d+/\d+', text1)
+print l.string
+
+if re.match(r'\d+/\d+/\d+', text1):
+    print('yes')
 else:
-    print 'failed'
+    print('no')
 
-# 切分字符
-list = 'a b   c'.split(' ')
-print(list)
+text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
+print datepat.findall(text)
 
-list = re.split(r'\s+', 'a b   c')
-re.split(r'[\s\,\;]+', 'a,b;; c  d')
-print(list)
+print text.replace("Today", "Fuck")
 
-m = re.match(r'^(\d{3})-(\d{3,8})$', '010-12345')
-# 注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串。
-print(m.groups())
+print re.sub(r'(\d+)/(\d+)/(\d+)', r'\3-\1-\2', text)
 
-# 贪婪匹配
-lsit = re.match(r'^(\d+?)(0*)$', '102300').groups()
-# ('1023', '00')
-re.match(r'^(\d+)(0*)$', '102300').groups()
-# ('102300', '')
+text = 'UPPER PYTHON, lower python, Mixed Python'
+print re.findall('python', text, flags=re.IGNORECASE)
+
+
+def matchcase(word):
+    def replace(m):
+        text = m.group()
+        if text.isupper():
+            return word.upper()
+        elif text.islower():
+            return word.lower()
+        elif text[0].isupper():
+            return word.capitalize()
+        else:
+            return word
+
+    return replace
+
+
+print re.sub('python', matchcase('snake'), text, flags=re.IGNORECASE)

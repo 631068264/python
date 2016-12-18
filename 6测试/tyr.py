@@ -5,13 +5,13 @@
 try catch
 """
 try:
-	print 'try...'
-	r = 10 / 0
-	print 'result:', r
+    print 'try...'
+    r = 10 / 0
+    print 'result:', r
 except ZeroDivisionError, e:
-	print 'except:', e
+    print 'except:', e
 finally:
-	print 'finally...'
+    print 'finally...'
 print 'END'
 
 """
@@ -21,18 +21,18 @@ import logging
 
 
 def foo(s):
-	return 10 / int(s)
+    return 10 / int(s)
 
 
 def bar(s):
-	return foo(s) * 2
+    return foo(s) * 2
 
 
 def main():
-	try:
-		bar('0')
-	except StandardError, e:
-		logging.exception(e)
+    try:
+        bar('0')
+    except StandardError, e:
+        logging.exception(e)
 
 
 main()
@@ -44,14 +44,14 @@ print 'END'
 
 
 class FooError(StandardError):
-	pass
+    pass
 
 
 def foo(s):
-	n = int(s)
-	if n == 0:
-		raise FooError('invalid value: %s' % s)  # 相当于throws
-	return 10 / n
+    n = int(s)
+    if n == 0:
+        raise FooError('invalid value: %s' % s)  # 相当于throws
+    return 10 / n
 
 
 print(foo(0))
