@@ -9,10 +9,10 @@
 
 # 组(group)是一个运行中greenlet的集合，集合中的greenlet像一个组一样 会被共同管理和调度。
 # 它也兼饰了像Python的multiprocessing库那样的 平行调度器的角色。
+from greenlet import getcurrent
 
-
-# import gevent
-# from gevent.pool import Group
+import gevent
+from gevent.pool import Group
 #
 #
 # def talk(msg):
@@ -36,15 +36,16 @@
 
 
 
-# group = Group()
-#
-#
+group = Group()
+
+
 # def hello_from(n):
 #     print('Size of group %s' % len(group))
 #     print('Hello from Greenlet %s' % id(getcurrent()))
+#     return id(getcurrent())
 #
-#
-# group.map(hello_from, xrange(3))
+# o = group.map(hello_from, xrange(3))
+# print o
 
 
 # def intensive(n):

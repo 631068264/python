@@ -27,7 +27,7 @@ def dropdb():
 @click.option('--count', default=1, help='number of greetings')
 @click.argument('name')
 def hello(count, name):
-    """Hello many time"""
+    """python click_head.py hello --count 2 12"""
     for x in range(count):
         click.echo('Hello %s!' % name)
 

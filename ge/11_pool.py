@@ -16,6 +16,7 @@ pool = Pool(2)
 
 def hello_from(n):
     print('Size of pool %s' % len(pool))
+    return len(pool)
 
-
-pool.map(hello_from, xrange(3))
+p = pool.map(hello_from, xrange(3))
+print p
