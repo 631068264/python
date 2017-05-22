@@ -131,7 +131,7 @@ class MyClass(object):
     # def __new__(cls, *args, **kwargs):
     #     print("new")
 
-    __metaclass__ = Singleton
+    __metaclass__ = Singleton1
 
     def __init__(self):
         # print("init")

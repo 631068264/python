@@ -8,14 +8,17 @@
 
 
 class Base(object):
-    base = None
+    def __init__(self):
+        self.base = None
 
     def run(self):
         print self.base
 
 
 class A(Base):
-    params = None
+    def __init__(self, params):
+        self.params = params
+        super(A, self).__init__()
 
     def run(self):
         print self.base + self.params
@@ -34,7 +37,9 @@ class A(Base):
 
 
 class B(Base):
-    params = None
+    def __init__(self, params):
+        self.params = params
+        super(B, self).__init__()
 
     def __setstate__(self, state):
         print "setstate"
@@ -52,11 +57,17 @@ class B(Base):
         print self.base * self.params
 
 
-def _create(base_class, p):
-    class C(base_class):
-        params = p
+class C(object):
+    def __init__(self, path):
+        self.path = path
 
-    return C()
+    @classmethod
+    def get(cls, path):
+        return cls(path)
+
+
+def _create(base_class, p):
+    return base_class(params=p)
 
 
 def factory(base_class):
@@ -75,4 +86,15 @@ A_class_list = factory(base_class=A)
 B_class_lsit = factory(base_class=B)
 for a in A_class_list:
     o = pickle.dumps(a, pickle.HIGHEST_PROTOCOL)
-    print o
+    # print o
+
+# from ctypes import py_object, pythonapi
+#
+# mappingproxy = pythonapi.PyDictProxy_New
+# mappingproxy.argtypes = [py_object]
+# mappingproxy.restype = py_object
+#
+# bundle = {}
+# b = mappingproxy(bundle)
+# bundle["sdf"] = 1
+# print b
