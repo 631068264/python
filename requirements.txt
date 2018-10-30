@@ -7,7 +7,7 @@ googlefinance==0.7
 greenlet==0.4.10
 Logbook==1.0.0
 paramiko==1.17.2
-Pillow==5.2.0
+Pillow==5.3.0
 py==1.4.31
 pycrypto==2.6.1
 pytest==3.0.4
